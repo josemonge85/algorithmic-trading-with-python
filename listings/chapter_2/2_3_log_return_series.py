@@ -1,3 +1,7 @@
+
+import pandas as pd
+import numpy as np
+
 def calculate_log_return_series(series: pd.Series) -> pd.Series:
     """
     Same as calculate_return_series but with log returns

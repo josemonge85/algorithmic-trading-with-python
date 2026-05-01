@@ -1,3 +1,5 @@
+from typing import List
+
 def calculate_return_series(prices: List[float]) -> List[float]:
     """
     Calculates return series as a parallel list of returns on prices

@@ -337,12 +337,12 @@ class PortfolioHistory(object):
     @property
     def final_cash(self):
         self._assert_finished()
-        return self.cash_series[-1]
+        return self.cash_series.iloc[-1]
 
     @property
     def final_equity(self):
         self._assert_finished()
-        return self.equity_series[-1]
+        return self.equity_series.iloc[-1]
 
     _PERFORMANCE_METRICS_PROPS = [
         'percent_return',
@@ -426,8 +426,8 @@ class PortfolioHistory(object):
         ax = equity_curve.plot()
 
         spy_closes = self.spy['close']
-        initial_cash = self.cash_series[0]
-        initial_spy = spy_closes[0]
+        initial_cash = self.cash_series.iloc[0]
+        initial_spy = spy_closes.iloc[0]
 
         scaled_spy = spy_closes * (initial_cash / initial_spy)
         scaled_spy.plot()

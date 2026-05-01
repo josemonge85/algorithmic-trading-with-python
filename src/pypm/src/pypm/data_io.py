@@ -7,6 +7,8 @@ DATA_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 
     '..',
     '..',
+    '..',
+    '..',
     'data',
 )
 EOD_DATA_DIR = os.path.join(DATA_DIR, 'eod')

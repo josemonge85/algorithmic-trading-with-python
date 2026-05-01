@@ -1,3 +1,5 @@
+import pandas as pd
+
 def calculate_return_series(series: pd.Series) -> pd.Series:
     """
     Calculates the return series of a time series.

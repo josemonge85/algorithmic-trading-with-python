@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 def get_years_past(series: pd.Series) -> float:
     """
     Calculate the years past according to the index of the series for use with

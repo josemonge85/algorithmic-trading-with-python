@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def calculate_cagr(series: pd.Series) -> float:
     """
     Calculate compounded annual growth rate
