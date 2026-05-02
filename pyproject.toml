@@ -15,6 +15,9 @@ dependencies = [
 members = [
     "src/pypm",
     "sim",
+    "listings/chapter_5",
+    "listings/chapter_6",
+    "listings/chapter_7",
 ]
 
 [tool.uv.sources]

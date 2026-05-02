@@ -56,6 +56,8 @@ if __name__ == '__main__':
     df = pd.concat(df_by_symbol.values(), axis=0)
     df.sort_index(inplace=True)
     df.dropna(inplace=True)
+    # Ensure y is discrete for classification
+    df['y'] = df['y'].astype(int)
     print(df)
 
     # Fit the model

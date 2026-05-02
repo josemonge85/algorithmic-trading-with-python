@@ -21,13 +21,19 @@ def calculate_uniqueness(event_spans: pd.Series,
     df = pd.DataFrame(0, index=price_index, columns=columns)
 
     for i, (event_start, event_end) in enumerate(event_spans.items()):
-        df[i].loc[event_start:event_end] += 1
+        df.loc[event_start:event_end, i] += 1
 
     # Compute concurrency over event span then calculate uniqueness
     avg_uniquenesses = list()
     for i, (event_start, event_end) in enumerate(event_spans.items()):
         concurrency: pd.Series = df.loc[event_start:event_end].sum(axis=1)
-        avg_uniqueness = 1 / hmean(concurrency)
+        positive_concurrency = concurrency[concurrency > 0]
+        if positive_concurrency.empty:
+            avg_uniqueness = 0.0
+        else:
+            avg_uniqueness = 1 / hmean(positive_concurrency)
+            if not np.isfinite(avg_uniqueness):
+                avg_uniqueness = 0.0
         avg_uniquenesses.append(avg_uniqueness)
 
     return pd.Series(avg_uniquenesses, index=event_spans.index)

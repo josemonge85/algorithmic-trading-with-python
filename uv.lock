@@ -10,6 +10,9 @@ resolution-markers = [
 [manifest]
 members = [
     "algorithmic-trading-with-python",
+    "chapter-5",
+    "chapter-6",
+    "chapter-7",
     "pypm",
     "sim",
 ]
@@ -91,6 +94,27 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/bf/41/4c1168c74fac325c0c8156f04b6749c8b6a8f405bbf91413ba088359f60d/cffi-2.0.0-cp314-cp314t-win_amd64.whl", hash = "sha256:d68b6cef7827e8641e8ef16f4494edda8b36104d79773a334beaa1e3521430f6", size = 191726, upload_time = "2025-09-08T23:23:41.742Z" },
     { url = "https://files.pythonhosted.org/packages/ae/3a/dbeec9d1ee0844c679f6bb5d6ad4e9f198b1224f4e7a32825f47f6192b0c/cffi-2.0.0-cp314-cp314t-win_arm64.whl", hash = "sha256:0a1527a803f0a659de1af2e1fd700213caba79377e27e4693648c2923da066f9", size = 184195, upload_time = "2025-09-08T23:23:43.004Z" },
 ]
+
+[[package]]
+name = "chapter-5"
+version = "0.1.0"
+source = { virtual = "listings/chapter_5" }
+dependencies = [
+    { name = "pypm" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pypm", editable = "src/pypm" }]
+
+[[package]]
+name = "chapter-6"
+version = "0.1.0"
+source = { virtual = "listings/chapter_6" }
+
+[[package]]
+name = "chapter-7"
+version = "0.1.0"
+source = { virtual = "listings/chapter_7" }
 
 [[package]]
 name = "colorama"
